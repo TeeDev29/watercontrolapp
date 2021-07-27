@@ -1,0 +1,240 @@
+
+
+<ion-content>
+  <div class="top-section ion-padding">
+    <ion-icon name="logo-firebase"></ion-icon>
+   <div class="title">
+     <h2><b>Wecome To</b></h2>
+     <p>Automatic vegetable<br>
+      watering system<br>
+      by Application</p>
+   </div>
+  </div>
+
+
+  <div class="status-section ion-padding">
+    <h3><b>Battery State :</b></h3>
+  <ion-grid>
+    <ion-row class="monitor-battery">
+      <ion-col size = "12">
+        <ion-row>
+
+          <ion-col style="background-color: #fdc407; height: 50px;">
+            <div class="status-battery1">
+              <ion-icon name="hardware-chip-outline"style="width: 40px; height: 30px;"></ion-icon>
+              <p><b>{{battery1}}%</b></p>
+            </div>
+          </ion-col>
+
+          <ion-col style="background-color: #fdc407; height: 50px;">
+            <div class="status-battery2">
+              <ion-icon name="car" style="width: 40px; height: 30px;"></ion-icon>
+              <p><b>{{battery2}}%</b></p>
+            </div>
+          </ion-col>
+
+          <ion-col style="background-color: #fdc407; height: 50px;">
+            <div class="status-battery3">
+              <ion-icon name="car" style="width: 40px; height: 30px;"></ion-icon>
+              <p><b>{{battery3}}%</b></p>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </div>
+
+  <div class="statustwo-section ion-padding">
+    <h3><b>All State :</b></h3>
+    <ion-grid>
+      <p>water :</p>
+      <ion-row>
+        <ion-col size="7" style="background-color: rgb(61, 61, 61);">
+          <div class="status-water">
+            <ion-icon name="water-outline"style="width: 40px; height: 30px;"></ion-icon>
+            <p style="color: #ff7585;">: {{statuswater}}</p>
+          </div>
+        </ion-col>
+        
+      </ion-row >
+
+      <p>set soil moisture :</p>
+      <ion-row>
+        <ion-col size="3" style="background-color:rgb(192, 219, 255); border-radius: 30px 30px 15px 15px; text-align: center;">
+          <p>{{setHam1}}%</p>
+        </ion-col>
+        <ion-col size="3" style="background-color: rgb(192, 219, 255); border-radius: 15px 15px 15px 15px; text-align: center;">
+          <p>{{setHam2}}%</p>
+        </ion-col>
+        <ion-col size="3" style="background-color: rgb(192, 219, 255); border-radius: 15px 15px 30px 30px; text-align: center;">
+          <p>{{setHam3}}%</p>
+        </ion-col>
+
+      </ion-row>
+
+      <p>timer :</p>
+
+      <ion-row>
+        
+        <ion-col size="3" style="background-color: #ffd261; text-align: center; height: 70px;">
+          <p>{{Timer1Starthr}}:{{Timer1Startmin}} min.</p>
+        </ion-col>
+     
+         
+        <ion-col size="3" style="background-color: #ff7585; text-align: center; height: 70px;">
+          <p>{{Timer2Starthr}}:{{Timer2Startmin}} min.</p>
+        </ion-col>
+
+        <ion-col size="3" style="background-color: #9c9efa; text-align: center; height: 70px;">
+          <p>{{Timer3Starthr}}:{{Timer3Startmin}} min.</p>
+        </ion-col>
+
+      </ion-row>
+
+      <p>position:</p>
+
+      <ion-row>
+        
+        <ion-col size="8" style="background-color: #6cc00c; text-align: center; height: 50px;">
+          <p style="color: #ffffff;">{{statusposition}}</p>
+        </ion-col>
+
+        <ion-col size="3" style="background-color: #ffffff; text-align: center; height: 70px;">
+          
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+  <div class="body-section ion-padding">
+    <h3><b>Humidity State :</b></h3>
+    <ion-grid>
+      <ion-row class="monitor-first">
+        <ion-col size ="6">
+
+          <div class="box-one">
+            <ion-row>
+
+                <ion-col size="6" style="height: 50px; font-size: 16px; text-align: center; display: inline-block; ">
+                  <p>point:1</p>
+                </ion-col>
+              <ion-col size="6" style="height: 50px;">
+                <div class="item-boxone">
+                  <ion-toggle color="primary" [(ngModel)]="point1"(ionChange)="setpoint1(point1.value)"></ion-toggle>  
+                </div>
+              </ion-col>
+            </ion-row>
+            <div class="circlr">
+              <p>{{Ham1}}%</p>
+            </div>
+          </div>
+        </ion-col>
+
+
+        <ion-col size ="6">
+          <div class="box-two">
+            <ion-row>
+              <ion-col size="6" style="height: 50px; font-size: 16px; text-align: center; display: inline-block; ">
+                <p>point:2</p>
+              </ion-col>
+            <ion-col size="6" style="height: 50px;">
+              <div class="item-boxtwo">
+                <ion-toggle color="primary" [(ngModel)]="point2"(ionChange)="setpoint2(point2.value)"></ion-toggle>             
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="circlr">
+            <p>{{Ham2}}%</p>
+          </div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+
+
+      <ion-row class="monitor-two">
+        <ion-col size ="6">
+          <div class="box-tree">
+            <ion-row>
+              <ion-col size="6" style="height: 50px; font-size: 16px; text-align: center; display: inline-block; ">
+                <p>point:3</p>
+              </ion-col>
+            <ion-col size="6" style="height: 50px;">
+              <div class="item-boxtree">
+                <ion-toggle color="primary" [(ngModel)]="point3" (ionChange)="setpoint3(point3.value)"></ion-toggle>             
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="circlr">
+            <p>{{Ham4}}%</p>
+          </div>
+          </div>
+        </ion-col>
+        <ion-col  size ="6">
+
+          <div class="box-foue">
+            <ion-row>
+              <ion-col size="6" style="height: 50px; font-size: 16px; text-align: center; display: inline-block; ">
+                <p>point:4</p>
+              </ion-col>
+            <ion-col size="6" style="height: 50px;">
+              <div class="item-boxfoue">
+                <ion-toggle color="primary" [(ngModel)]="point4"(ionChange)="setpoint4(point4.value)"></ion-toggle>             
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="circlr">
+            <p>{{Ham5}}%</p>
+          </div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row class="monitor-tree">
+        <ion-col size ="6">
+          <div class="box-five">
+            <ion-row>
+              <ion-col size="6" style="height: 50px; font-size: 16px; text-align: center; display: inline-block; ">
+                <p>point:5</p>
+              </ion-col>
+            <ion-col size="6" style="height: 50px;">
+              <div class="item-boxfive">
+                <ion-toggle color="primary" [(ngModel)]="point5"(ionChange)="setpoint5(point5.value)"></ion-toggle>             
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="circlr">
+            <p>{{Ham7}}%</p>
+          </div>
+          </div>
+        </ion-col>
+        <ion-col size ="6">
+
+          <div class="box-six">
+            <ion-row>
+              <ion-col size="6" style="height: 50px; font-size: 16px; text-align: center; display: inline-block; ">
+                <p>point:6</p>
+              </ion-col>
+            <ion-col size="6" style="height: 50px;">
+              <div class="item-boxsix">
+                <ion-toggle color="primary" [(ngModel)]="point6"(ionChange)="setpoint6(point6.value)"></ion-toggle>             
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="circlr">
+            <p>{{Ham8}}%</p>
+          </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+ 
+
+</ion-content>

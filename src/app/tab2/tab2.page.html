@@ -1,0 +1,78 @@
+<ion-content>
+  <div class="top-section ion-padding">
+    <ion-icon name="cog"></ion-icon>
+    <div class="title">
+      <h1><b>Setting</b></h1>
+    </div>
+  </div>
+
+  <div class="setting-section ion-padding">
+    <p>setting soil moisture :</p>
+    <p>plot 1:</p>
+    <ion-card style="border-radius: 20px 20px 20px 20px;">
+        <ion-item>
+          <ion-range color="tertiary" pin="true" [(ngModel)]="setHam1" >
+            <ion-label slot="start">0</ion-label>
+            <ion-label slot="end">100</ion-label>
+          </ion-range>
+          <ion-button style="width: 50px ;height: 50px;" (click)="setplot1()" >
+            <ion-icon name="checkmark"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-card>
+
+        <p>plot 2:</p>
+      <ion-card style="border-radius: 20px 20px 20px 20px;">
+        <ion-item>
+          <ion-range color="tertiary" pin="true" [(ngModel)]="setHam2" >
+            <ion-label slot="start">0</ion-label>
+            <ion-label slot="end">100</ion-label>
+          </ion-range>
+          <ion-button style="width: 50px ;height: 50px;" (click)="setplot2()" >
+            <ion-icon name="checkmark"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-card>
+
+        <p>plot 3:</p>
+      <ion-card style="border-radius: 20px 20px 20px 20px;">
+        <ion-item>
+          <ion-range color="tertiary" pin="true" [(ngModel)]="setHam3" >
+            <ion-label slot="start">0</ion-label>
+            <ion-label slot="end">100</ion-label>
+          </ion-range>
+          <ion-button style="width: 50px ;height: 50px;" (click)="setplot3()" >
+            <ion-icon name="checkmark"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-card>
+  </div>
+
+  <div class="settime-section ion-padding">
+    <p>setting timer :</p>
+
+    <ion-card style="border-radius: 20px 20px 20px 20px;">
+      <ion-item>
+        <ion-label>time1 : &nbsp;{{Timer1Starthr}} : {{Timer1Startmin}}</ion-label>
+        <ion-datetime displayFormat=" " pickerFormat = "HH:mm" (ionChange)="getTimeStart1(timeSelectStart1.value)" #timeSelectStart1></ion-datetime>
+      </ion-item>
+    </ion-card>
+
+    <ion-card style="border-radius: 20px 20px 20px 20px;">
+      <ion-item>
+        <ion-label>time2 : &nbsp;{{Timer2Starthr}} : {{Timer2Startmin}}</ion-label>
+        <ion-datetime displayFormat=" " pickerFormat = "HH:mm" (ionChange)="getTimeStart2(timeSelectStart2.value)" #timeSelectStart2></ion-datetime>
+      </ion-item>
+    </ion-card>
+
+    <ion-card style="border-radius: 20px 20px 20px 20px;">
+      <ion-item>
+        <ion-label>time3 : &nbsp;{{Timer3Starthr}} : {{Timer3Startmin}}</ion-label>
+        <ion-datetime displayFormat=" " pickerFormat = "HH:mm" (ionChange)="getTimeStart3(timeSelectStart3.value)" #timeSelectStart3></ion-datetime>
+      </ion-item>
+    </ion-card>
+  </div>
+
+
+</ion-content>
+

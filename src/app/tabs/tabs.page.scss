@@ -1,0 +1,33 @@
+:host{
+
+
+    
+ion-tab-bar{
+
+    border:0;
+    display: flex;
+    
+    padding: 1px;
+    
+    ion-icon{
+        width: 30px;
+        height: 30px;
+    }
+    
+}
+ion-tab-button{
+    max-height: 35px;
+    max-width: 110px;
+} 
+
+
+    .tab-selected{
+
+        color:#FFFF;
+        background-color: cornflowerblue;
+        border-radius: 5px;
+        max-height: 35px;
+        max-width: 110px;
+    }
+
+}
